@@ -60,4 +60,5 @@ key = `snid:${siteId}:${notificationId}`;  value =1;
 
 
 producer is running as main app: server.js
+
 consumer is runnig in kafka: kafka/consumers/notification   app.js
