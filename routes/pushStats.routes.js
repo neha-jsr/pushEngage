@@ -34,9 +34,9 @@ router.get('/byNotification', validator.validateNotificationPushStats, (req, res
 });
 
 
-router.post('/bySiteId', validator.validateSiteActionStats, (req, res) => {
-    let startHour = TimeUtils.getEpochHourFromTimestamp(req.startTime);
-    let endHour = TimeUtils.getEpochHourFromTimestamp(req.endTime);
+router.get('/bySiteId', validator.validateSiteActionStats, (req, res) => {
+    let startHour = TimeUtils.getEpochHourFromTimestamp(req.body.startDate);
+    let endHour = TimeUtils.getEpochHourFromTimestamp(req.body.endDate);
     let queryPayload = {
         'siteId': req.body.siteId,
         'actionType': req.body.actionType,
